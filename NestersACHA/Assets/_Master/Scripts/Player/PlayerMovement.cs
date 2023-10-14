@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController _characterController;
-    public GameObject VFX;
+ //  public GameObject VFX;
 
     private Vector3 _movement = Vector3.zero;
     [Header("Physic Values")]
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Gravity")]
     public float gravity = 20f;
-    private Vector3 moveDirection;
+  //  private Vector3 moveDirection;
 
     private void Start()
     {
