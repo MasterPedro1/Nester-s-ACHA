@@ -5,11 +5,13 @@ using UnityEngine.Events;
 
 public class OnTriggerEvent : MonoBehaviour
 {
+
+    public string tag;
     public UnityEvent onEnter;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(tag))
         {
             onEnter.Invoke();
         }

@@ -189,4 +189,11 @@ public class EnemyStatesManager : MonoBehaviour
     {
         if (detection.isPlayerDetected == true) currentState = EnemyState.FollowPlayer;
     }
+
+
+     public void GoToSound(Transform location)
+    {
+        enemyMovement.currentDestination = location;
+        ChangeState(EnemyState.Pursuit);
+    }
 }
