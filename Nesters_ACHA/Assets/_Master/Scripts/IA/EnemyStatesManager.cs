@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStatesManager : MonoBehaviour
 {
-    [SerializeField] private float _distanceToAttack = 1; 
+    [SerializeField] private float _distanceToAttack = 1;
+    [SerializeField] private bool _isListening=true;
 
     [Header("Time values")]
     [SerializeField] private float _waitingTime = 8f;
@@ -100,6 +102,8 @@ public class EnemyStatesManager : MonoBehaviour
         enemyAnimations.SetAnimation(enemyAnimations.walkAnim);
         enemyMovement.SetDestination(enemyMovement.walkSpeed, enemyMovement.walkAcceleration);
 
+        _isListening = false;    
+
         if (Vector3.Distance(transform.position, enemyMovement.currentDestination.position) >= detection.visionDistance)
         {
             detection.isPlayerDetected = false;
@@ -131,6 +135,7 @@ public class EnemyStatesManager : MonoBehaviour
 
     void OnSearching()
     {
+        _isListening = true;
         GetPlayerDetection();
         enemyMovement.Idle();
         enemyAnimations.SetAnimation(enemyAnimations.search);
@@ -189,4 +194,23 @@ public class EnemyStatesManager : MonoBehaviour
     {
         if (detection.isPlayerDetected == true) currentState = EnemyState.FollowPlayer;
     }
+
+
+     public void GoToSound(Transform location)
+    {
+        enemyMovement.currentDestination = location;
+        ChangeState(EnemyState.Pursuit);
+    }
+
+
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Noise")&& _isListening)
+        {
+            ChangeState(EnemyState.FollowPlayer);
+        }
+    }
+
 }
