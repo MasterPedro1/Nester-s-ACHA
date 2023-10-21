@@ -145,6 +145,7 @@ public class EnemyStatesManager : MonoBehaviour
 
     void OnStunning()
     {
+        _isListening = false;
         enemyGetDamage.isStun = false;
         enemyMovement.Idle();
         enemyAnimations.SetAnimation(enemyAnimations.stunAnim);
