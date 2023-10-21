@@ -15,6 +15,9 @@ public class PlayerStatesManager : MonoBehaviour
     [SerializeField] private float _executeTime=1.55f;
     [SerializeField] private float _GethitTime=0.5f;
 
+    [Header("Objects References")]
+    [SerializeField] private GameObject _noiseDetection;
+
    public enum PlayerState
     {
         Idle, CrouchIdle, Walking,BackWalking, CrouchWalking, CrouchWalkBack, Running, Attack, Execution, Death, GetHit
@@ -133,6 +136,8 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentRotationSpeed = playerMovement.standRotationSpeed;
         playerAnimations.SetAnimation(playerAnimations.idleAnim);
 
+        onNoise(Vector3.one);
+
         GetKeepKey("BackWalk", PlayerState.BackWalking);
         GetAKey("Crouch", PlayerState.CrouchIdle);
         GetKeepKey("Walking", PlayerState.Walking);
@@ -144,7 +149,10 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentSpeed = playerMovement.crouchSpeed;
         playerMovement.currentRotationSpeed = playerMovement.standRotationSpeed;
 
+
         playerAnimations.SetAnimation(playerAnimations.crouchAnim);
+
+        onNoise(Vector3.one);
 
         GetAKey("Crouch", PlayerState.Idle);
         GetKeepKey("Walking", PlayerState.CrouchWalking);
@@ -158,6 +166,8 @@ public class PlayerStatesManager : MonoBehaviour
 
         playerAnimations.SetAnimation(playerAnimations.walkAnim);
 
+        onNoise(new Vector3(2,2,2));
+
         UpKey("Walking", PlayerState.Idle);
 
         GetKeepKey("Run", PlayerState.Running);
@@ -169,6 +179,8 @@ public class PlayerStatesManager : MonoBehaviour
         playerAnimations.SetAnimation(playerAnimations.backWalk);
         playerMovement.currentRotationSpeed = playerMovement.moveRotationSpeed;
 
+        onNoise(new Vector3(2, 2, 2));
+
         UpKey("BackWalk", PlayerState.Idle);
 
         GetAKey("Crouch", PlayerState.CrouchWalkBack);
@@ -179,6 +191,8 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentRotationSpeed = playerMovement.standRotationSpeed;
         playerMovement.currentSpeed = playerMovement.crouchSpeed;
         playerAnimations.SetAnimation(playerAnimations.crouchWalkAnim);
+
+        onNoise(Vector3.one);
 
         UpKey("Walking", PlayerState.CrouchIdle);
 
@@ -193,6 +207,10 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentRotationSpeed = playerMovement.standRotationSpeed;
         playerAnimations.SetAnimation(playerAnimations.crouchWalkBack);
 
+        onNoise(Vector3.one);
+
+        onNoise(Vector3.one);
+
         UpKey("BackWalk", PlayerState.CrouchIdle);
         GetAKey("Crouch", PlayerState.BackWalking);
     }
@@ -202,6 +220,8 @@ public class PlayerStatesManager : MonoBehaviour
         playerAnimations.SetAnimation(playerAnimations.runAnim);
         playerMovement.currentSpeed = playerMovement.runningSpeed;
         playerMovement.currentRotationSpeed = playerMovement.moveRotationSpeed;
+
+        onNoise(new Vector3(8, 8, 8));
 
         UpKey("Walking", PlayerState.Idle);
         UpKey("Run", PlayerState.Walking);
@@ -246,6 +266,14 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentRotationSpeed = 0;
 
         StartCoroutine(WaitToState(PlayerState.Idle, _GethitTime));
+    }
+
+
+    void onNoise(Vector3 size)
+    {
+        BoxCollider noiseCollider = _noiseDetection.GetComponent<BoxCollider>();
+        noiseCollider.size = size;
+
     }
 
     public IEnumerator WaitToState(PlayerState state, float time)

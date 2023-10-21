@@ -409,6 +409,7 @@ MonoBehaviour:
   _attackTime: 0
   _executeTime: 0
   _GethitTime: 0.5
+  _noiseDetection: {fileID: 0}
   currentState: 0
 --- !u!4 &73731198
 Transform:
@@ -745,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distanceToAttack: 1
+  _isListening: 1
   _waitingTime: 4
   _searchingTime: 10
   _stunTime: 3
@@ -7899,6 +7901,7 @@ MonoBehaviour:
   _attackTime: 0
   _executeTime: 0
   _GethitTime: 0.5
+  _noiseDetection: {fileID: 0}
   currentState: 0
 --- !u!114 &919132148555677076
 MonoBehaviour:
@@ -8530,6 +8533,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382914162682393587, guid: e68e502024924a24f88f87f45b024bf9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382914162682393587, guid: e68e502024924a24f88f87f45b024bf9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5284495371659660134, guid: e68e502024924a24f88f87f45b024bf9,
         type: 3}
@@ -10782,6 +10795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distanceToAttack: 2
+  _isListening: 1
   _waitingTime: 4
   _searchingTime: 10
   _stunTime: 3
