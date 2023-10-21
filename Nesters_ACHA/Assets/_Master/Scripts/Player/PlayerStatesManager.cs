@@ -136,7 +136,7 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentRotationSpeed = playerMovement.standRotationSpeed;
         playerAnimations.SetAnimation(playerAnimations.idleAnim);
 
-        onNoise(Vector3.one);
+        onNoise(Vector3.zero);
 
         GetKeepKey("BackWalk", PlayerState.BackWalking);
         GetAKey("Crouch", PlayerState.CrouchIdle);
@@ -152,7 +152,7 @@ public class PlayerStatesManager : MonoBehaviour
 
         playerAnimations.SetAnimation(playerAnimations.crouchAnim);
 
-        onNoise(Vector3.one);
+        onNoise(Vector3.zero);
 
         GetAKey("Crouch", PlayerState.Idle);
         GetKeepKey("Walking", PlayerState.CrouchWalking);
@@ -192,8 +192,7 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentSpeed = playerMovement.crouchSpeed;
         playerAnimations.SetAnimation(playerAnimations.crouchWalkAnim);
 
-        onNoise(Vector3.one);
-
+        onNoise(Vector3.zero);
         UpKey("Walking", PlayerState.CrouchIdle);
 
         GetAKey("Run", PlayerState.Running);
@@ -207,9 +206,9 @@ public class PlayerStatesManager : MonoBehaviour
         playerMovement.currentRotationSpeed = playerMovement.standRotationSpeed;
         playerAnimations.SetAnimation(playerAnimations.crouchWalkBack);
 
-        onNoise(Vector3.one);
+     
 
-        onNoise(Vector3.one);
+        onNoise(Vector3.zero);
 
         UpKey("BackWalk", PlayerState.CrouchIdle);
         GetAKey("Crouch", PlayerState.BackWalking);
