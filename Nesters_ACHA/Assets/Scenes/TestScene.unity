@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18384172, g: 0.22857621, b: 0.30073646, a: 1}
+  m_IndirectSpecularColor: {r: 0.18384144, g: 0.22857592, b: 0.30073583, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,28 +186,6 @@ Transform:
   m_Father: {fileID: 515564625}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &28195711 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1746509501640165096, guid: e68e502024924a24f88f87f45b024bf9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1746509501316903554}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &28195714
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28195711}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &41470125
 GameObject:
   m_ObjectHideFlags: 0
@@ -8474,11 +8452,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Player1
       objectReference: {fileID: 0}
-    - target: {fileID: 1512559606972664736, guid: e68e502024924a24f88f87f45b024bf9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2285119818879570202, guid: e68e502024924a24f88f87f45b024bf9,
         type: 3}
       propertyPath: m_RootOrder
@@ -8533,26 +8506,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382914162682393587, guid: e68e502024924a24f88f87f45b024bf9,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382914162682393587, guid: e68e502024924a24f88f87f45b024bf9,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5284495371659660134, guid: e68e502024924a24f88f87f45b024bf9,
-        type: 3}
-      propertyPath: moveRotationSpeed
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5284495371659660134, guid: e68e502024924a24f88f87f45b024bf9,
-        type: 3}
-      propertyPath: standRotationSpeed
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68e502024924a24f88f87f45b024bf9, type: 3}

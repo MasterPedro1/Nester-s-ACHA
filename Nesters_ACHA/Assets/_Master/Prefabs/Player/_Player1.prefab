@@ -619,8 +619,8 @@ MonoBehaviour:
   crouchSpeed: 2
   runningSpeed: 5
   backRunSpeed: 8
-  standRotationSpeed: 0.4
-  moveRotationSpeed: 0.7
+  standRotationSpeed: 0.2
+  moveRotationSpeed: 0.4
   currentSpeed: 0
   currentRotationSpeed: 0
   gravity: 5
@@ -1082,6 +1082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746509501640165097}
   - component: {fileID: 1746509501640165102}
+  - component: {fileID: 28195714}
   m_Layer: 0
   m_Name: LightAttackCollider
   m_TagString: LightPunch
@@ -1117,6 +1118,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!54 &28195714
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746509501640165096}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1746509501732373209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,7 +3101,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 1.0271546, z: 8}
+  m_Size: {x: 1, y: 1.0271546, z: 1}
   m_Center: {x: 0, y: 0.54349166, z: 0}
 --- !u!1 &8319171956444857102
 GameObject:
